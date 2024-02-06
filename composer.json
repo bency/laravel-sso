@@ -1,5 +1,5 @@
 {
-    "name": "casperlaitw/laravel-sso",
+    "name": "bency/laravel-sso",
     "description": "Laravel SSO Solution",
     "type": "library",
     "license": "MIT",
@@ -12,12 +12,12 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/CasperLaiTW/sso"
+            "url": "https://github.com/bency/sso"
         }
     ],
     "require": {
         "php": ">=7.3.0",
-        "casperlaitw/sso": "^1.0",
+        "bency/sso": "^1.0",
         "spatie/url": "^1.3",
         "illuminate/support": "^5.8|^6|^7|^8",
         "illuminate/database": "^5.8|^6|^7|^8",
