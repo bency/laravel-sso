@@ -25,6 +25,11 @@ abstract class AutoAttach
      */
     public function handle(Request $request, Closure $next)
     {
+        // SSO Server 本身不走 Broker attach
+        if (config('laravel-sso.type', 'server') === 'server') {
+            return $next($request);
+        }
+
         $broker = new Broker();
 
         if ($error = $broker->hasErrors($request)) {

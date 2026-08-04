@@ -16,6 +16,14 @@ class LogoutSSO
      */
     public function handle(Request $request, Closure $next)
     {
+        if (config('laravel-sso.type', 'server') === 'server') {
+            auth()->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return $next($request);
+        }
+
         $broker = new Broker();
         $broker->logout();
         auth()->logout();
