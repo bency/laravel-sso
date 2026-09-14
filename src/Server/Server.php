@@ -116,6 +116,7 @@ class Server extends \Casperlaitw\SSO\Server\Server
     {
         try {
             $this->startBrokerSession();
+
             return $this->session->getUserSession();
         } catch (Exception $ex) {
             throw new RuntimeException($ex->getMessage());
@@ -128,6 +129,7 @@ class Server extends \Casperlaitw\SSO\Server\Server
     public function getBroker()
     {
         [$brokerId] = $this->parseBearer($this->getBearerToken());
+
         return $brokerId;
     }
 

@@ -15,6 +15,7 @@ class Login extends Controller
             if ($user = $server->login($request)) {
                 return response()->json(['user' => $user]);
             }
+
             return response()->json(['error' => 'Not found.'], 404);
         } catch (Exception $ex) {
             return response()->json(['error' => $ex->getMessage()], 400);
